@@ -139,6 +139,7 @@ void writeLog( int loglvl, const char* str, ... ) {
             // Used to ensure errno output is aligned correctly
             char dateLengthSpacing[ strlen( date ) + 1 ];
             memset( dateLengthSpacing, ' ', strlen( date ) + 1 );
+            dateLengthSpacing[ strlen( date ) + 1 ] = 0;
             sprintf( msg + strlen( msg), "%s\terrno : %s\n", dateLengthSpacing, strerror( errno ) );
         }
         // Write message to log
